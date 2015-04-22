@@ -1,5 +1,5 @@
-dockerfiles-centos-chrome
-=========================
+dockerfiles-centos-mychrome
+===========================
 
 CentOS 7 dockerfile for Google Chrome writing as non-root user on the monted volume
 
