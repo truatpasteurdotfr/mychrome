@@ -30,10 +30,7 @@ MAINTAINER Tru Huynh <tru@pasteur.fr>
 RUN yum -y update; yum clean all
 RUN yum -y install mesa-dri-drivers libexif libcanberra-gtk2 libcanberra; yum clean all
 
-#ADD https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm /root/google-chrome-stable_current_x86_64.rpm
-COPY google-chrome-stable_current_x86_64.rpm /root/google-chrome-stable_current_x86_64.rpm
-#
-COPY CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo
+ADD https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm /root/google-chrome-stable_current_x86_64.rpm
 RUN yum -y install /root/google-chrome-stable_current_x86_64.rpm; yum clean all
 RUN dbus-uuidgen > /etc/machine-id
 # adapt this run.sh script to match your uid/gid
