@@ -13,11 +13,11 @@ To build:
 Run the chrome browser inside docker with a permanent storage (in this case ~/docker/mychrome)
 ~/docker/mychrome will be mapped to /home/centos inside the container, and will provide the permanent storage for chrome.
 
-    # docker run -t --memory 512mb --net host  -e DISPLAY=$DISPLAY -v /dev/snd:/dev/snd -v -v ~/docker/mychrome:/home/centos --privileged  truhuynh/chrome:centos7 
+    # docker run --rm -t --memory 512mb --net host  -e DISPLAY=$DISPLAY -v /dev/dri:/dev/dri -v /dev/shm:/dev/shm -v /dev/snd:/dev/snd -v -v ~/docker/mychrome:/home/centos --privileged  truhuynh/chrome:centos7 
 
 Run a pristine chrome browser inside docker, without any previous configuration:
 
-    # docker run -t --memory 512mb --net host  -e DISPLAY=$DISPLAY -v /dev/snd:/dev/snd --privileged  truhuynh/chrome:centos7 
+    # docker run --rm -t --memory 512mb --net host  -e DISPLAY=$DISPLAY -v /dev/dri:/dev/dri -v /dev/shm:/dev/shm -v /dev/snd:/dev/snd --privileged  truhuynh/chrome:centos7 
 
 based on https://blog.jessfraz.com/posts/docker-containers-on-the-desktop.html
 
